@@ -78,6 +78,17 @@ function changeVideo(){
     hiddenVideo = temp;
 }
 
+setInterval(() => {
+
+    totalFiles = 100;
+
+    if(remainingFiles > 0)
+        remainingFiles--;
+
+    updateProgress();
+
+},100);
+
 loadConfig();
 
 //
@@ -101,10 +112,15 @@ function SetFilesNeeded(needed){
     totalFiles = needed;
     remainingFiles = needed;
 
+    document.getElementById("status").innerText =
+    "Total archivos: " + needed;
+
     updateProgress();
 }
 
 function DownloadingFile(file){
+
+    console.log("Downloading:", file);
 
     document.getElementById("status").innerText =
     "Descargando: " + file;
