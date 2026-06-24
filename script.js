@@ -84,6 +84,9 @@ loadConfig();
 // GARRY'S MOD HOOKS
 //
 
+let totalFiles = 0;
+let remainingFiles = 0;
+
 function GameDetails(
 serverName,
 serverURL,
@@ -94,19 +97,38 @@ gamemode
 ){}
 
 function SetFilesNeeded(needed){
-    console.log("Archivos:", needed);
+
+    totalFiles = needed;
+    remainingFiles = needed;
+
+    updateProgress();
 }
 
 function DownloadingFile(file){
 
     document.getElementById("status").innerText =
     "Descargando: " + file;
+
+    remainingFiles--;
+
+    updateProgress();
 }
 
 function SetStatusChanged(status){
 
     document.getElementById("status").innerText =
     status;
+}
+
+function updateProgress(){
+
+    if(totalFiles <= 0) return;
+
+    const percent =
+        ((totalFiles - remainingFiles) / totalFiles) * 100;
+
+    document.getElementById("progress-bar")
+        .style.width = percent + "%";
 }
 
 // =====================================
