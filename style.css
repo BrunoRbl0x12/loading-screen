@@ -13,6 +13,14 @@ body{
     color:white;
 }
 
+#gif-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
 #background-container{
     position:fixed;
     width:100%;
