@@ -65,14 +65,24 @@ body{
 
 #progress-container{
     width:550px;
-    height:20px;
-    background:red;
+    height:14px;
+
+    border-radius:50px;
+
+    background:rgba(0,0,0,0.35);
+
+    overflow:hidden;
 }
 
 #progress-bar{
     width:0%;
     height:100%;
-    background:lime;
+
+    background:white;
+
+    box-shadow:0 0 10px rgba(255,255,255,0.8);
+
+    transition:width .25s;
 }
 
 #tip{
