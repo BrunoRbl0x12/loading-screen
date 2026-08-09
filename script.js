@@ -239,7 +239,7 @@ const musicFiles = [
 
 const musicPlayer = new Audio();
 
-musicPlayer.volume = 0.2; // 20% (0.0 a 1.0)
+musicPlayer.volume = 0.1; // 20% (0.0 a 1.0)
 
 function playRandomMusic() {
 
